@@ -60,20 +60,3 @@ Pontos de extensão preparados para Firebase/Supabase, login, ranking em nuvem, 
 
 **Autor:** Prof. Djalma Batista Barbosa Junior
 
-
-## Solução rápida para quando o GitHub Pages abre só o título/repositório
-
-Se ao abrir a URL aparecer apenas algo como **"tutorprog"** (ou uma página simples), normalmente o Pages está apontando para a pasta/branch errada.
-
-1. No GitHub, acesse **Settings > Pages**.
-2. Em **Build and deployment**, selecione **Deploy from a branch**.
-3. Em **Branch**, escolha **main** e pasta **/(root)** (não use `/docs` neste projeto).
-4. Clique em **Save**.
-5. Aguarde de 1 a 5 minutos e abra: `https://SEU_USUARIO.github.io/tutorprog/`
-
-Checklist:
-- O arquivo `index.html` deve estar na raiz do repositório.
-- A URL de projeto deve incluir o nome do repositório no final (`/tutorprog/`).
-- Faça um hard refresh no navegador (`Ctrl + F5`).
-
-Este projeto também inclui `.nojekyll` para evitar processamento desnecessário do Jekyll no GitHub Pages.
