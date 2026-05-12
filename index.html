@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal Interativo de Programação — Prof. Djalma</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <h1>🚀 Portal Interativo de Programação</h1>
+      <p>Aprenda lógica, pseudolinguagem, C# e Java de forma prática.</p>
+      <small>Prof. Djalma Batista Barbosa Junior</small>
+    </div>
+    <button id="btn-editar-perfil" class="btn">👤 Perfil do Aluno</button>
+  </header>
+
+  <main class="container">
+    <section class="grid cards-principais">
+      <a class="card" href="#trilhas">🧭 Começar trilha</a>
+      <a class="card" href="#laboratorio">💻 Laboratório de código</a>
+      <a class="card" href="#desafios">🎯 Desafios</a>
+      <a class="card" href="#ranking">🏆 Ranking</a>
+      <a class="card" href="#professor">🧑‍🏫 Área do professor</a>
+    </section>
+
+    <section class="dashboard grid-3">
+      <article class="panel"><h3>XP total</h3><p id="xp-total">0</p></article>
+      <article class="panel"><h3>Módulos concluídos</h3><p id="modulos-concluidos">0</p></article>
+      <article class="panel"><h3>Próxima missão</h3><p id="proxima-missao">Execute seu primeiro código</p></article>
+    </section>
+
+    <section id="avisos" class="panel"><h2>📢 Mural de Avisos</h2><div id="lista-avisos"></div></section>
+
+    <section id="trilhas" class="panel"><h2>🧭 Trilhas de Aprendizagem</h2><div id="lista-trilhas" class="grid"></div></section>
+
+    <section id="modulos" class="panel"><h2>📚 Módulos de Estudo</h2><div id="lista-modulos" class="grid"></div></section>
+
+    <section id="laboratorio" class="panel">
+      <h2>🧪 Laboratório de Código</h2>
+      <div class="toolbar">
+        <select id="exemplo-select" aria-label="Escolher exemplo"></select>
+        <button class="btn" id="btn-carregar-exemplo">Carregar exemplo</button>
+        <button class="btn" id="btn-executar">Executar</button>
+        <button class="btn" id="btn-verificar">Verificar desafio</button>
+        <button class="btn" id="btn-limpar">Limpar</button>
+        <button class="btn" id="btn-copiar">Copiar</button>
+        <button class="btn" id="btn-salvar">Salvar local</button>
+        <button class="btn" id="btn-restaurar">Restaurar</button>
+      </div>
+      <textarea id="editor" rows="14" aria-label="Editor de pseudolinguagem"></textarea>
+      <pre id="saida" class="terminal" aria-live="polite"></pre>
+    </section>
+
+    <section id="desafios" class="panel"><h2>🎯 Central de Desafios</h2><div id="lista-desafios" class="grid"></div></section>
+
+    <section id="conquistas" class="panel"><h2>🏅 Conquistas e Missões</h2><div id="lista-conquistas" class="grid"></div><div id="lista-missoes" class="grid"></div></section>
+
+    <section id="ranking" class="panel">
+      <h2>🏆 Ranking Local</h2>
+      <div class="toolbar">
+        <button class="btn" id="btn-ranking-salvar">Atualizar minha pontuação</button>
+        <button class="btn danger" id="btn-ranking-limpar">Limpar ranking</button>
+      </div>
+      <ol id="lista-ranking"></ol>
+    </section>
+
+    <section id="professor" class="panel">
+      <h2>🧑‍🏫 Área do Professor</h2>
+      <p class="warning">Área local de apoio ao professor. Não possui autenticação nesta versão.</p>
+      <div class="toolbar">
+        <button class="btn" id="btn-exportar">Exportar progresso JSON</button>
+        <button class="btn" id="btn-copiar-desafios">Copiar lista de desafios</button>
+        <button class="btn danger" id="btn-resetar">Limpar progresso local</button>
+      </div>
+      <div class="guide">
+        <h3>Publicação GitHub Pages</h3><code>git init && git add . && git commit -m "feat: cria portal interativo de programacao"</code>
+        <h3>Publicação HostGator</h3><p>Enviar arquivos para <strong>public_html/</strong> sem subpastas extras.</p>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="modal-perfil">
+    <form method="dialog" id="form-perfil">
+      <h3>Perfil do aluno</h3>
+      <label>Nome <input id="perfil-nome" required /></label>
+      <label>Turma <input id="perfil-turma" /></label>
+      <label>Avatar (emoji) <input id="perfil-avatar" maxlength="2" /></label>
+      <menu><button class="btn" value="cancel">Cancelar</button><button class="btn" id="btn-salvar-perfil" value="default">Salvar</button></menu>
+    </form>
+  </dialog>
+
+  <script src="data/content.js"></script>
+  <script src="data/desafios.js"></script>
+  <script src="data/avisos.js"></script>
+  <script src="data/trilhas.js"></script>
+  <script src="js/pseudo.js"></script>
+  <script src="js/missoes.js"></script>
+  <script src="js/ranking.js"></script>
+  <script src="js/professor.js"></script>
+  <script src="js/portal.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
