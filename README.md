@@ -59,3 +59,4 @@ public_html/
 Pontos de extensão preparados para Firebase/Supabase, login, ranking em nuvem, relatórios pedagógicos e IA.
 
 **Autor:** Prof. Djalma Batista Barbosa Junior
+
