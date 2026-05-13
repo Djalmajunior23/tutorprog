@@ -77,3 +77,15 @@ Checklist:
 - Faça um hard refresh no navegador (`Ctrl + F5`).
 
 Este projeto também inclui `.nojekyll` para evitar processamento desnecessário do Jekyll no GitHub Pages.
+
+
+## Evitar conflitos de merge
+
+- Sempre sincronize antes de começar: `git pull --rebase origin main`.
+- Evite editar os mesmos blocos em paralelo (principalmente `js/app.js`).
+- Faça commits menores por tema (`feat`, `fix`, `docs`) para facilitar resolução.
+- Em caso de conflito:
+  1. `git status` para ver arquivos em conflito.
+  2. Resolver marcadores `<<<<<<<`, `=======`, `>>>>>>>`.
+  3. Validar com `node -e "new Function(require('fs').readFileSync('js/app.js','utf8'))"`.
+  4. `git add . && git rebase --continue` (ou `git commit` se não estiver em rebase).
