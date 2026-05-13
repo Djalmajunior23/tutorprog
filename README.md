@@ -118,3 +118,19 @@ bash scripts/replace-repository-history.sh origin main
 Esse script cria um commit snapshot do estado atual e faz `push --force` para a branch de destino.
 
 > ⚠️ Atenção: isso remove o histórico anterior da branch publicada. Use somente se esse for o fluxo desejado.
+
+
+## Push para GitHub sem conflito
+Use um comando único:
+
+```bash
+bash scripts/push-update.sh
+```
+
+Esse fluxo faz `fetch + rebase + checks + push`.
+
+Se você quiser ignorar histórico e substituir tudo no remoto:
+
+```bash
+bash scripts/push-update.sh --replace
+```
