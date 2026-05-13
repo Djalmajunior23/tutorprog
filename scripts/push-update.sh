@@ -32,10 +32,20 @@ echo "Modo safe: sincronizando com origin/${branch} via rebase..."
 git fetch origin
 if ! git rebase "origin/${branch}"; then
   echo
-  echo "Conflito detectado no rebase."
-  echo "Opção A (recomendado): resolva conflito e rode: git rebase --continue"
-  echo "Opção B (substituir tudo): bash scripts/push-update.sh --replace"
-  exit 1
+  echo "Conflito detectado no rebase. Tentando resolvedor automático..."
+  if bash scripts/resolve-portal-conflicts.sh; then
+    if git rebase --continue; then
+      echo "Conflitos recorrentes resolvidos automaticamente."
+    else
+      echo "Ainda há conflitos manuais. Resolva e rode: git rebase --continue"
+      exit 1
+    fi
+  else
+    echo "Falha no resolvedor automático."
+    echo "Opção A: resolver manualmente e rodar: git rebase --continue"
+    echo "Opção B: sobrescrever remoto: bash scripts/push-update.sh --replace"
+    exit 1
+  fi
 fi
 
 echo "Rodando validações..."

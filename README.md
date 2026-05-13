@@ -144,7 +144,7 @@ Use um comando único:
 bash scripts/push-update.sh
 ```
 
-Esse fluxo faz `fetch + rebase + checks + push`.
+Esse fluxo faz `fetch + rebase + checks + push` e, se detectar os conflitos recorrentes do portal, tenta `scripts/resolve-portal-conflicts.sh` automaticamente.
 
 Se você quiser ignorar histórico e substituir tudo no remoto:
 
