@@ -3,7 +3,11 @@ window.Portal = (() => {
 
   const initial = {
     schemaVersion: 1,
-    perfil: { nome: 'Aluno', turma: '', avatar: '🧑‍💻' },
+    perfil: {
+      nome: 'Aluno',
+      turma: '',
+      avatar: '🧑‍💻'
+    },
     xp: 0,
     modulosConcluidos: [],
     desafiosConcluidos: [],
@@ -36,22 +40,22 @@ window.Portal = (() => {
     return typeof value === 'boolean' ? value : fallback;
   }
 
-  function normalize(state) {
+  function normalize(state = {}) {
     return {
       ...initial,
       ...state,
       schemaVersion: 1,
       perfil: {
         ...initial.perfil,
-        ...(state?.perfil || {})
+        ...(state.perfil || {})
       },
-      xp: asNumber(state?.xp, 0),
-      execucoes: asNumber(state?.execucoes, 0),
-      usouLab: asBool(state?.usouLab, false),
-      modulosConcluidos: asArray(state?.modulosConcluidos),
-      desafiosConcluidos: asArray(state?.desafiosConcluidos),
-      trilhasConcluidas: asArray(state?.trilhasConcluidas),
-      conquistas: asArray(state?.conquistas)
+      xp: asNumber(state.xp, 0),
+      execucoes: asNumber(state.execucoes, 0),
+      usouLab: asBool(state.usouLab, false),
+      modulosConcluidos: asArray(state.modulosConcluidos),
+      desafiosConcluidos: asArray(state.desafiosConcluidos),
+      trilhasConcluidas: asArray(state.trilhasConcluidas),
+      conquistas: asArray(state.conquistas)
     };
   }
 
@@ -64,5 +68,10 @@ window.Portal = (() => {
     localStorage.setItem(KEY, JSON.stringify(normalize(state)));
   }
 
-  return { KEY, initial, load, save };
+  return {
+    KEY,
+    initial,
+    load,
+    save
+  };
 })();
