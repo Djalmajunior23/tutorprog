@@ -80,3 +80,29 @@ bash scripts/configure-branch-protection.sh SEU_USUARIO/SEU_REPO main
 ```
 
 > Requer GitHub CLI (`gh`) autenticado (`gh auth login`).
+
+
+## Resolver conflitos de merge (PR)
+Se o GitHub mostrar **"This branch has conflicts that must be resolved"**, siga:
+
+```bash
+bash scripts/sync-with-main.sh
+```
+
+Se houver conflito durante o rebase:
+
+1. Abra os arquivos com conflito e remova marcadores `<<<<<<<`, `=======`, `>>>>>>>`.
+2. Execute:
+
+```bash
+git add <arquivos>
+git rebase --continue
+```
+
+3. Ao terminar, envie a branch:
+
+```bash
+git push --force-with-lease
+```
+
+Dica: rode `bash scripts/premerge-check.sh` antes de abrir/atualizar PR.
