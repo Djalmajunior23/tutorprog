@@ -1,62 +1,52 @@
-# Portal Interativo de Programação — Prof. Djalma
+# Portal Interativo de Programação — Professor Djalma
 
-Portal educacional interativo para ensino de lógica, pseudolinguagem, C# e Java para iniciantes.
+Portal educacional interativo desenvolvido para auxiliar alunos iniciantes no aprendizado de lógica de programação, pseudolinguagem, C#, Java e fundamentos de algoritmos.
 
-## Objetivo pedagógico
-Promover aprendizagem prática e gamificada com trilhas, módulos, desafios e laboratório livre.
+---
 
-## Tecnologias
+## Objetivo Pedagógico
+
+Promover uma aprendizagem prática, dinâmica e gamificada por meio de:
+
+- Trilhas de aprendizagem
+- Módulos interativos
+- Laboratório de pseudolinguagem
+- Desafios práticos
+- Sistema de XP e conquistas
+- Feedback imediato ao aluno
+
+---
+
+## Tecnologias Utilizadas
+
 - HTML5
 - CSS3
-- JavaScript puro
+- JavaScript Vanilla
 - LocalStorage
 
-## Estrutura
-- `index.html`, `404.html`, `.htaccess`
-- `css/style.css`
-- `js/*.js`
-- `data/*.js`
-- `assets/`
+---
 
-## Executar localmente
-Basta abrir `index.html` no navegador.
-
-## Publicar no GitHub
-```bash
-git init
-git add .
-git commit -m "feat: cria portal interativo de programacao"
-git branch -M main
-git remote add origin https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git
-git push -u origin main
-```
-GitHub Pages: **Settings > Pages > Deploy from a branch > main > /root > Save**.
-
-## Publicar no HostGator
-Envie os arquivos diretamente para `public_html/`:
+## Estrutura do Projeto
 
 ```txt
-public_html/
+/
 ├── index.html
 ├── 404.html
 ├── .htaccess
 ├── css/
+│   └── style.css
 ├── js/
+│   ├── app.js
+│   ├── modules.js
+│   ├── challenges.js
+│   ├── gamification.js
+│   └── storage.js
 ├── data/
-└── assets/
-```
-
-## Recursos do sistema
-- Perfil local do aluno
-- Trilhas e módulos
-- Laboratório com interpretador de pseudolinguagem
-- Desafios com feedback
-- XP, missões, conquistas
-- Ranking local
-- Área do professor com exportação JSON
-
-## Evoluções futuras
-Pontos de extensão preparados para Firebase/Supabase, login, ranking em nuvem, relatórios pedagógicos e IA.
-
-**Autor:** Prof. Djalma Batista Barbosa Junior
+│   ├── modulos.js
+│   └── exemplos.js
+├── assets/
+│   ├── img/
+│   ├── icons/
+│   └── sounds/
+└── README.md
 

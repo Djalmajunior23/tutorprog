@@ -1,0 +1,8 @@
+# Normalize line endings to avoid noisy conflicts
+* text=auto eol=lf
+
+# Keep docs merge-friendly
+*.md text diff=markdown
+
+# Simple union strategy for changelog-like docs (if added later)
+CHANGELOG.md merge=union
