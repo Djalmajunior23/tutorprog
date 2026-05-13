@@ -106,3 +106,15 @@ git push --force-with-lease
 ```
 
 Dica: rode `bash scripts/premerge-check.sh` antes de abrir/atualizar PR.
+
+
+## Atualização substituindo tudo (sem merge)
+Se você **realmente** quiser que cada atualização substitua tudo no repositório (apagando histórico da branch), use:
+
+```bash
+bash scripts/replace-repository-history.sh origin main
+```
+
+Esse script cria um commit snapshot do estado atual e faz `push --force` para a branch de destino.
+
+> ⚠️ Atenção: isso remove o histórico anterior da branch publicada. Use somente se esse for o fluxo desejado.
