@@ -120,6 +120,23 @@ Esse script cria um commit snapshot do estado atual e faz `push --force` para a 
 > ⚠️ Atenção: isso remove o histórico anterior da branch publicada. Use somente se esse for o fluxo desejado.
 
 
+
+
+### Resolver os 6 conflitos recorrentes automaticamente
+Durante um rebase/merge com conflito, rode:
+
+```bash
+bash scripts/resolve-portal-conflicts.sh
+```
+
+Depois finalize:
+
+```bash
+git rebase --continue
+```
+
+> O script aplica a estratégia padrão do portal: manter `index.html`, `data/content.js`, `js/app.js`, `js/portal.js`, `js/pseudo.js` da branch atual e combinar `README.md`.
+
 ## Push para GitHub sem conflito
 Use um comando único:
 
